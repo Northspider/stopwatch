@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="mustafah abdullah">
+    <meta name="keywords" content="HTML, CSS, JS">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Age Entry</title>
+  </head>
+  <body>
+    <style>
+      body{
+        font-family: "Arial", Sans-Serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: whitesmoke;
+        
+      }
+      .form{
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px solid  dodgerblue;
+        box-shadow: 10px 20px 20px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 250px;
+      }
+      h3{
+        width: 100%;
+        padding: 10px;
+        background-color: dodgerblue;
+        border-top-left-radius: 15px;
+        color: white;
+        font-size: 25px;
+        font-family: Times New Roman, Time Sans-Serif;
+      }
+      input{
+        width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+      }
+      label{
+        font-size: 30px;
+        font-family: Times New Roman, Time sans-serif;
+        padding: 10px;
+      }
+      
+      button{
+        width: 100%;
+        background: dodgerblue;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 25px;
+        font-family: Times New Roman, Time Sans-Serif;
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+    <div class="form">
+     <h3>Let us know your age</h3>
+     <hr><br>
+    <label>Enter Your Age</label><br>
+    <input type="text" id="myText"><br><br>
+    <button type="submit" id="mySubmit">Submit</button>
+    <p id="result"></p>
+    </div>
+    <script>
+      const myText = document.getElementById("myText");
+      const mySubmit = document.getElementById("mySubmit");
+      const result = document.getElementById("result");
+      
+      let age;
+      
+      mySubmit.onclick = function(){
+        age = myText.value;
+        age = Number(age);
+        if(age >= 100){
+          result.textContent = 'You Are Old To Enter This site';
+        }
+        else if(age == 0){
+          result.textContent = 'You cannot Enter This site, you were born ';
+        }
+        else if(age >= 18){
+          result.textContent = 'You Are old Enough to Enter this site';
+        }
+        else if(age < 0){
+          result.textContent = 'You age cannot be below Zero 0';
+        }
+        else{
+          result.textContent = 'You most be 18+ to Enter this site';
+        }
+      }
+    </script>
+  </body>
+</html>
